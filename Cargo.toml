@@ -4,8 +4,8 @@ version = "0.2.0"
 authors = ["Gabriel Gazola Milan <gabriel.gazola@poli.ufrj.br>"]
 edition = "2018"
 description = "Arbitrage trading bot for Binance"
-homepage = "https://github.com/gabriel-milan/btrader"
-repository = "https://github.com/gabriel-milan/btrader"
+homepage = "https://github.com/tqtensor/btrader"
+repository = "https://github.com/tqtensor/btrader"
 license = "GPL-3.0"
 keywords = ["bot", "algotrading", "cryptocurrencies", "binance", "arbitrage"]
 

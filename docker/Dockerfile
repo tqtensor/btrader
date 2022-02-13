@@ -13,7 +13,7 @@ RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 # Get code
 WORKDIR /
-RUN git clone https://github.com/gabriel-milan/btrader code
+RUN git clone https://github.com/tqtensor/btrader code
 
 # Install
 RUN cp /code/config/sample_config.json /config.json

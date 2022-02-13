@@ -1,6 +1,6 @@
 # bTrader
 
-[![Build Status](https://travis-ci.org/gabriel-milan/btrader.png?branch=master)](https://travis-ci.org/gabriel-milan/btrader)
+[![Build Status](https://travis-ci.org/tqtensor/btrader.png?branch=master)](https://travis-ci.org/tqtensor/btrader)
 [![Crate](https://img.shields.io/crates/v/btrader)](https://crates.io/crates/btrader)
 [![Docker Image](https://img.shields.io/docker/v/gabrielmilan/btrader?logo=docker&sort=date)](https://hub.docker.com/r/gabrielmilan/btrader)
 
@@ -43,7 +43,7 @@ This method envolves more steps, but it's recommended for performance.
 2. Clone this repository:
 
 ```
-git clone https://github.com/gabriel-milan/btrader
+git clone https://github.com/tqtensor/btrader
 ```
 
 3. `cd` into the repository directory and run:
