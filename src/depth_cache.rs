@@ -1,16 +1,17 @@
-use binance::api::*;
-use binance::market::*;
-use binance::model::*;
-use binance::websockets::*;
 use console::style;
+use exchange::{api::Exchange, market::*, model::*, websockets::*};
 use indicatif::ProgressBar;
 use rayon::prelude::*;
-use std::collections::{HashMap, VecDeque};
-use std::sync::atomic::AtomicBool;
-use std::sync::mpsc::{self, Receiver, Sender};
-use std::sync::{Arc, Mutex, RwLock};
-use std::thread;
-use std::time::Duration;
+use std::{
+    collections::{HashMap, VecDeque},
+    sync::{
+        atomic::AtomicBool,
+        mpsc::{self, Receiver, Sender},
+        Arc, Mutex, RwLock,
+    },
+    thread,
+    time::Duration,
+};
 
 #[derive(Debug, Clone)]
 pub struct LocalOrderBook {
@@ -56,7 +57,7 @@ impl DepthCache {
             style("[6/7]").bold().dim(),
         );
         // Initialize stuff
-        let market: Market = Binance::new(None, None);
+        let market: Market = Exchange::new(None, None);
         // Initialize keys on Dashmap
         let pb = ProgressBar::new(symbols.len() as u64);
         symbols.par_iter().for_each(|symbol| {

@@ -1,9 +1,5 @@
 use serde::{Deserialize, Serialize};
-use std::error::Error;
-use std::fmt;
-use std::fs::File;
-use std::io::BufReader;
-use std::path::Path;
+use std::{error::Error, fmt, fs::File, io::BufReader, path::Path};
 
 #[derive(Debug, Deserialize, Serialize, Clone)]
 pub struct Configuration {

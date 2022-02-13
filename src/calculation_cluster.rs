@@ -1,14 +1,13 @@
-use crate::config::Configuration;
-use crate::depth_cache::DepthCache;
-use crate::telegram::TelegramBot;
-use crate::trading_pair::TradingPair;
-use crate::triangular_relationship::TriangularRelationship;
-use binance::account::*;
-use binance::api::*;
-use binance::model::*;
+use crate::{
+    config::Configuration, depth_cache::DepthCache, telegram::TelegramBot,
+    trading_pair::TradingPair, triangular_relationship::TriangularRelationship,
+};
 use console::style;
-use std::collections::HashMap;
-use std::time::{SystemTime, UNIX_EPOCH};
+use exchange::{account::*, api::Exchange, model::*};
+use std::{
+    collections::HashMap,
+    time::{SystemTime, UNIX_EPOCH},
+};
 
 pub struct CalculationCluster {
     relationships: HashMap<String, TriangularRelationship>,
@@ -26,7 +25,7 @@ impl CalculationCluster {
     ) -> CalculationCluster {
         let config_clone = config.clone();
         let account: Account =
-            Binance::new(Some(config_clone.api_key), Some(config_clone.api_secret));
+            Exchange::new(Some(config_clone.api_key), Some(config_clone.api_secret));
         let config_clone = config.clone();
         let bot: TelegramBot = TelegramBot::new(config_clone);
         if config.telegram_enabled {

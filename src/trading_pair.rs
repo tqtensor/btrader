@@ -1,6 +1,5 @@
-use binance::model::*;
-use std::fmt;
-use std::time::SystemTime;
+use exchange::model::*;
+use std::{fmt, time::SystemTime};
 /*
  *  TradingPair
  */

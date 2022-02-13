@@ -1,14 +1,10 @@
-use crate::calculation_cluster::CalculationCluster;
-use crate::config::Configuration;
-use crate::depth_cache::DepthCache;
-use crate::trading_pair::TradingPair;
-use crate::triangular_relationship::TriangularRelationship;
-use binance::api::*;
-use binance::general::*;
-use binance::model::*;
+use crate::{
+    calculation_cluster::CalculationCluster, config::Configuration, depth_cache::DepthCache,
+    trading_pair::TradingPair, triangular_relationship::TriangularRelationship,
+};
 use console::style;
-use std::collections::HashMap;
-use std::fmt;
+use exchange::{api::Exchange, general::*, model::*};
+use std::{collections::HashMap, fmt};
 
 /*
  *  bTrader
@@ -29,9 +25,9 @@ impl bTrader {
     pub fn new(config_path: &str) -> bTrader {
         // Starting with configuration
         let config: Configuration = Configuration::new(config_path);
-        // Getting information from Binance...
-        print!("{} Connecting to Binance...", style("[1/7]").bold().dim(),);
-        let general: General = Binance::new(None, None);
+        // Getting information from OKX...
+        print!("{} Connecting to OKX...", style("[1/7]").bold().dim(),);
+        let general: General = Exchange::new(None, None);
         println!(" Successfully connected!");
         // Get trading pairs
         print!("{} Getting trading pairs...", style("[2/7]").bold().dim(),);
